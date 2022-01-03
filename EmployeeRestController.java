@@ -28,7 +28,7 @@ import com.greatLearning.employeeService.entity.User;
 import com.greatLearning.employeeService.service.EmployeeService;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/api")
 public class EmployeeRestController {
 	
 
