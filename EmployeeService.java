@@ -1,18 +1,25 @@
-package com.greatLearning.employeeService;
+package com.greatLearning.employeeService.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import java.util.List;
 
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
-@SpringBootApplication
-public class EmployeeService {
+import com.greatLearning.employeeService.entity.Employee;
+import com.greatLearning.employeeService.entity.Role;
+import com.greatLearning.employeeService.entity.User;
 
-	public static void main(String[] args) {
-		SpringApplication.run(EmployeeService.class, args);
-	}
+public interface EmployeeService {
+
+	public List<Employee> findAll();
+	
+	public Employee findById(int theId);
+	
+	public void save(Employee theEmployee);
+	
+	public void deleteById(int theId);
+	
+	public List<Employee> searchByFirstName(String firstName);
+	
+	public List<Employee> sortByFirstName(String order);
+	
+	public User saveUser(User user);
+	public Role saveRole(Role role);
 }
